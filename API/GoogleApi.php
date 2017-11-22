@@ -53,6 +53,7 @@ class GoogleApi implements IApi
         if($this->processedData->status == "OK") {
             return true;
         }
+        return false;
 
     }
 
