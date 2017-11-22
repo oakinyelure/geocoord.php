@@ -14,21 +14,17 @@ class GeoCoord {
     public function __construct($address) {
 
         if(!$address) {
-
             throw new InvalidArgumentException("Expected an address.");
-
         }
-        else {
 
-            $verifyAddress = new \Enforcer\Enforcer($address);
+        $verifyAddress = new \Enforcer\Enforcer($address);
 
-            if($verifyAddress->enforceAddressStandard()) {
+        if($verifyAddress->enforceAddressStandard()) {
 
-                $this->address = $address;
-            }
-
-            $this->apiInstance = new \API\GoogleApi($this->address);
+            $this->address = $address;
         }
+
+        $this->apiInstance = new \API\GoogleApi($this->address);
 
     }
 
