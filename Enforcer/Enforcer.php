@@ -40,7 +40,12 @@ class Enforcer implements IEnforcer
 
             $stateAndZipcodeValue = explode(' ',$separatedAddress[count($separatedAddress) - 1]);
 
-            return count($stateAndZipcodeValue) < 3 || count($stateAndZipcodeValue) > 3 ? false : true;
+            if(count($stateAndZipcodeValue) < 3 || count($stateAndZipcodeValue) > 3) {
+
+                return false;
+            }
+
+            return true;
         }
     }
 
