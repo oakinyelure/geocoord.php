@@ -50,13 +50,7 @@ class GoogleApi implements IApi
 
     public function checkURLStatus() {
 
-        if($this->processedData->status == "OK") {
-            return true;
-        }
-        else {
-
-            return false;
-        }
+        return $this->processedData->status == "OK" ? true : false;
     }
 
     private function processResponse() {
