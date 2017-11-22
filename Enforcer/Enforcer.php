@@ -36,17 +36,16 @@ class Enforcer implements IEnforcer
             return false;
 
         }
-        else {
 
-            $stateAndZipcodeValue = explode(' ',$separatedAddress[count($separatedAddress) - 1]);
+        $stateAndZipcodeValue = explode(' ',$separatedAddress[count($separatedAddress) - 1]);
 
-            if(count($stateAndZipcodeValue) < 3 || count($stateAndZipcodeValue) > 3) {
+        if(count($stateAndZipcodeValue) < 3 || count($stateAndZipcodeValue) > 3) {
 
-                return false;
-            }
-
-            return true;
+            return false;
         }
+
+        return true;
+
     }
 
 
