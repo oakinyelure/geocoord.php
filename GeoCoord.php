@@ -8,15 +8,15 @@
 
 class GeoCoord {
 
-    private $googleUrl;
     private $address;
-    private $addressStandard;
+    private $apiInstance;
 
     public function __construct($address) {
 
         if(!$address) {
 
             throw new InvalidArgumentException("Expected an address.");
+
         }
         else {
 
@@ -27,35 +27,18 @@ class GeoCoord {
                 $this->address = $address;
             }
 
-            $this->googleUrl =  "http://maps.google.com/maps/api/geocode/json?address=$address&sensor=false";
+            $this->apiInstance = new \API\GoogleApi($this->address);
         }
 
     }
 
+    public function requestLatitude() {
 
-    public function setLatitude() {
-
+        return $this->apiInstance->getLatitude();
     }
 
-    public function getLatitude() {
-
-    }
-
-    public function setLongitude() {
-
-    }
-
-    public function getLongitude() {
-
-    }
-
-    public function getLatitudeAndLongitude() {
-
-    }
-
-    private function processAddress($address) {
-
-
+    public function requestLongitude() {
+        return $this->apiInstance->getLongitude();
     }
 
 }
