@@ -9,10 +9,9 @@
 namespace API;
 
 
-interface ApiInterface
+interface IApi
 {
 
-    public function setGoogleURL();
     public function checkURLStatus();
 
 }
